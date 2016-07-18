@@ -1,0 +1,9 @@
+# git normalization file
+# @see http://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
+
+# Shorthand for text files.
+[attr]text    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+[attr]binary  -text diff
+
+# Define text file attributes.
+*.rule    text diff=c
