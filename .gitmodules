@@ -7,3 +7,6 @@
 [submodule "EA31337-Rider-Sets"]
 	path = Sets/Rider
 	url = git@github.com:EA31337/EA31337-Rider-Sets.git
+[submodule "VM"]
+	path = _VM
+	url = git@github.com:EA31337/FX-MT-VM.git
