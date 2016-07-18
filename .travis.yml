@@ -1,0 +1,14 @@
+language: bash
+notifications:
+  email: true
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/2c50114866dd0ba72f48
+    on_success: change
+    on_failure: always
+    on_start:   never
+before_script:
+  cd "$TRAVIS_BUILD_DIR"
+script:
+- find . -name "*.rules" -exec bash -n "{}" ';'
+- ./Scripts/test_rules.sh
