@@ -12,7 +12,9 @@ notifications:
     on_failure: always
     on_start:   never
 env:
-- TRACE=1
+  global:
+  - TRACE=1
+  - CWD="$TRAVIS_BUILD_DIR"
 before_script:
   cd "$TRAVIS_BUILD_DIR"
 script:
