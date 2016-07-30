@@ -1,0 +1,16 @@
+## Init settings.
+# Parameter list to optimize.
+strategy=Envelopes
+param=${strategy}_Shift
+param_list=( $param )
+## EA settings.
+ea_strategy_default_sets ${strategy}
+ea_set_neutral_trail ${name}
+
+## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+value=$(input_get ${param})
+start=$(( $value > 0 ? $(( $value - 1 )) : 0 ))
+end=$(( $value + 1))
+ea_set_optimize_param ${param} $start $end
+
+# vim: set syntax=sh:
