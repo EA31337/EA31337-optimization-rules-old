@@ -4,7 +4,7 @@ strategy=Envelopes
 param=${strategy}_Shift
 param_list=( $param )
 ## EA settings.
-ea_strategy_default_sets ${strategy}
+ea_strategy_default_sets ${strategy}.*
 ea_set_neutral_trail ${name}
 
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).

@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-name=RSI
+name=MA
 param=${name}_Applied_Price
 param_list=( ${param} )
 ## EA settings.
