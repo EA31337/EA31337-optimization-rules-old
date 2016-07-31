@@ -1,0 +1,11 @@
+## Init settings.
+# Parameter list to optimize.
+param=RiskRatio
+param_list=( $param )
+# Disable all optimization settings.
+ea_optimize_all_set 0
+
+## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+ea_set_optimize_param ${param} 0 0.5 4.0
+
+# vim: set syntax=sh:
