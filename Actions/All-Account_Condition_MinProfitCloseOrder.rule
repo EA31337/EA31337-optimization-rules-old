@@ -1,0 +1,19 @@
+## Init settings.
+# Parameter list to optimize.
+param=Account_Condition_MinProfitCloseOrder
+param_list=( $param )
+# Disable all optimization settings.
+ea_optimize_all_set 0
+# Disable boosting.
+ea_boost_enabled 0
+# Set lot size.
+ea_set_lotsize 0.01
+
+## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+value=$(input_get $param)
+start=$(( $value - 20 > 0 ? $value - 20 : 0 ))
+end=$(( $value + 20 ))
+step=10
+ea_set_optimize_param ${param} $start $end $step
+
+# vim: set syntax=sh:
