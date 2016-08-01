@@ -1,0 +1,21 @@
+## Init settings.
+# Parameter list to optimize.
+name=Alligator
+param1=${name}_Period_Lips
+param2=${name}_Period_Teeth
+param3=${name}_Period_Jaw
+param_list=( ${param1} ${param2} ${param3} )
+## EA settings.
+ea_strategy_default_sets ${name}.*
+ea_set_neutral_trail ${name}
+
+## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+for param in ${param_list[@]}; do
+  value=$(input_get ${param})
+  start=$(( $value  > 6 ? $(( $value - 4 )) : 2 ))
+  end=$(( $value + 4 ))
+  step=2
+  ea_set_optimize_param ${param} $start $end $step
+done
+
+# vim: set syntax=sh:
