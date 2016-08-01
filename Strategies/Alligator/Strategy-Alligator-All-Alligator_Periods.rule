@@ -12,7 +12,7 @@ ea_set_neutral_trail ${name}
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 for param in ${param_list[@]}; do
   value=$(input_get ${param})
-  start=$(( $value  > 4 ? $(( $value - 2 )) : 2 ))
+  start=$(( $value - 2 > 2 ? $(( $value - 2 )) : 2 ))
   end=$(( $value + 2 ))
   step=2
   ea_set_optimize_param ${param} $start $end $step
