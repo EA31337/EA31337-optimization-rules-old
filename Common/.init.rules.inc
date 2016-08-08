@@ -68,7 +68,7 @@ ea_boost_enabled() {
 
 # Enables/disables strategies.
 ea_strategies_enabled() {
-  input_set .*_Active $1
+  input_set .*_Active ${1:-1}
 }
 
 # Set strategy parameters.
@@ -81,7 +81,7 @@ ea_set_strategy_param() {
 
 # Enables/disables strategy.
 ea_strategy_enabled() {
-  input_set ^$1.*_Active ${2:-1}
+  input_set ^${1}_Active ${2:-1}
 }
 
 # Sets default sets to test core logic.
