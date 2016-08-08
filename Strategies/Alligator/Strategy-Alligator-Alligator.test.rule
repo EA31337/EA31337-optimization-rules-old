@@ -1,0 +1,6 @@
+## Init settings.
+# Test file parameters.
+name=Alligator
+ea_strategies_enabled 0
+ea_strategy_enabled ${strategy}
+# vim: set syntax=sh:
