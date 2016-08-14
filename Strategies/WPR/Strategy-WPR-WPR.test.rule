@@ -1,0 +1,6 @@
+## Init settings.
+# Test file parameters.
+name=WPR
+ea_strategies_enabled 0
+ea_strategy_enabled ${name}.*
+# vim: set syntax=sh:

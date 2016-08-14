@@ -1,0 +1,9 @@
+## Init settings.
+# Test file parameters.
+name=WPR
+period=30
+strategy=${name}${period}
+ini_set ^TestPeriod M${period}
+ea_strategies_enabled 0
+ea_strategy_enabled ${strategy}
+# vim: set syntax=sh:
