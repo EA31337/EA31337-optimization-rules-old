@@ -1,14 +1,10 @@
 ## Init settings.
 # Parameter list to optimize.
 name=Envelopes
-period=15
-strategy=${name}${period}
-param=${strategy}_Deviation
+param=${name}_Deviation
 param_list=( ${param} )
-## Backtest settings.
-ini_set ^TestPeriod M${period}
 ## EA settings.
-ea_strategy_default_sets ${strategy}
+ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
 
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
