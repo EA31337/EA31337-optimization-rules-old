@@ -1,0 +1,17 @@
+## Init settings.
+# Parameter list to optimize.
+name=Bands
+param=${name}_Shift
+param_list=( ${param} )
+## EA settings.
+ea_strategy_default_sets ${name}.*
+ea_set_neutral_trail ${name}
+
+## Optimization settings.
+# Test Bands shift
+value=$(input_get ${param})
+start=$(($value > 0 ? $value - 1 : 0))
+end=$(($value + 1))
+ea_set_optimize_param ${param} $start $end
+
+# vim: set syntax=sh:
