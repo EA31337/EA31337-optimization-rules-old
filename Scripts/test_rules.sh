@@ -29,4 +29,5 @@ find "$ROOT" -type f -name "*$1*.rule" -maxdepth 3 -print0 | sort -z | while IFS
   . "$rule_file"
 done
 find "$ROOT" -type f -name "*.test" -delete
+trap - 1 2 3 15 ERR EXIT
 echo $0 OK
