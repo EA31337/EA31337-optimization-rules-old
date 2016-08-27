@@ -15,7 +15,7 @@ cd "$ROOT"
 . ./_VM/scripts/.vars.inc.sh
 . ./Common/.init.rules.inc
 
-find "$ROOT" -type f -name "*$1*.rule" -print0 | sort -z | while IFS= read -r -d '' rule_file; do
+find "$ROOT" -type f -name "*$1*.rule" -maxdepth 3 -print0 | sort -z | while IFS= read -r -d '' rule_file; do
   echo "Testing $(basename ${rule_file} .rule)..."
   . "$rule_file"
 done
