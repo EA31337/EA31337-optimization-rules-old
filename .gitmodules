@@ -1,12 +1,3 @@
-[submodule "EA31337-Lite-Sets"]
-	path = Sets/Lite
-	url = https://github.com/EA31337/EA31337-Lite-Sets.git
-[submodule "EA31337-Advanced-Sets"]
-	path = Sets/Advanced
-	url = https://github.com/EA31337/EA31337-Advanced-Sets.git
-[submodule "EA31337-Rider-Sets"]
-	path = Sets/Rider
-	url = https://github.com/EA31337/EA31337-Rider-Sets.git
 [submodule "VM"]
-	path = _VM
-	url = https://github.com/EA31337/FX-MT-VM.git
+  path = _VM
+  url = https://github.com/EA31337/FX-MT-VM.git
