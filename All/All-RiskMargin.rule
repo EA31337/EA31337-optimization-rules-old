@@ -2,6 +2,8 @@
 # Parameter list to optimize.
 param=RiskMargin
 param_list=( $param )
+# Limit drawdown.
+ini_set_ea maxdrawdown 30
 # Disable all optimization settings.
 ea_optimize_all_set 0
 
