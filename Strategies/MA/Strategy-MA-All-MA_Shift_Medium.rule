@@ -1,13 +1,18 @@
 ## Init settings.
 # Parameter list to optimize.
 name=MA
-param=^${name}_Method
+param=${name}_Shift_Medium
 param_list=( $param )
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
 
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-ea_set_optimize_param ^${param} 0 3
+value=$(input_get $param)
+start=$(($value  - 2))
+end=$(($value  + 2))
+ea_set_optimize_param ^${param} $start $end
 
 # vim: set syntax=sh:
+
+
