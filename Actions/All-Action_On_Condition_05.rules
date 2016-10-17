@@ -3,7 +3,7 @@
 param_list=( Market_Condition_5 Action_On_Condition_5 )
 # Set backtest EA parameters.
 ini_set "^TestModel" 2
-ini_set_ea maxdrawdown 25
+ini_set_ea maxdrawdown 50
 # Disable all optimization settings.
 ea_optimize_all_set 0
 # Enable account conditions.
