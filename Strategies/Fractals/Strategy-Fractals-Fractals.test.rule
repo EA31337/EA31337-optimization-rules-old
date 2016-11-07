@@ -2,5 +2,5 @@
 # Test file parameters.
 name=Fractals
 ea_strategies_enabled 0
-ea_strategy_enabled ${name}.*
+ea_strategy_enabled ${name}[0-9]\\+
 # vim: set syntax=sh:
