@@ -1,7 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
 name=MA
-param_list=( $param )
 param_list+=( ${name}_Shift )
 param_list+=( ${name}_Shift_Far )
 param_list+=( ${name}_Shift_Fast )
