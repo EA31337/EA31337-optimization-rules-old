@@ -3,6 +3,7 @@
 name=MACD
 param=${name}_Period_Ratio
 param_list=( ${param} )
+
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
