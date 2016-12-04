@@ -8,15 +8,14 @@ ea_optimize_all_set 0
 ea_actions_enabled 0
 # Disable boosting.
 ea_boost_enabled 0
+# Close orders after some time.
+input_set ^CloseOrderAfterXHours 48
+# Reset all trails to default.
+ea_set_neutral_trail ".*" 0
 # Set lot size.
 ea_set_lotsize 0.01
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-# Test $param.
-input_set $param,F 1
-input_set $param,1 0
-input_set $param,2 1
-input_set $param,3 27
+## Optimization settings.
+ea_set_optimize_param ${param} 1 27
 
-# $ETA: 3h$
 # vim: set syntax=sh:
