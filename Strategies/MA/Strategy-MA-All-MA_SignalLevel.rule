@@ -1,16 +1,17 @@
 ## Init settings.
 # Parameter list to optimize.
 name=MA
-param=^${name}_SignalLevel
+param=${name}_SignalLevel
 param_list=( ${param} )
+
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+## Optimization settings.
 value=$(input_get ${param})
-start=$( bc <<< "$(input_get ${param}) - 0.2" )
-end=$(   bc <<< "$(input_get ${param}) + 0.2" )
+start=$( bc <<< "$value - 0.2" )
+end=$(   bc <<< "$value + 0.2" )
 step=0.1
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 

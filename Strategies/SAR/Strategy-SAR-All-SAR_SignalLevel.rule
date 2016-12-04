@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-name=Alligator
+name=SAR
 param=${name}_SignalLevel
 param_list=( ${param} )
 

@@ -1,6 +1,7 @@
 ## Init settings.
 # Parameter list to optimize.
 name=Alligator
+param_list=()
 param_list+=( ${name}_Shift_Jaw )
 param_list+=( ${name}_Shift_Teeth )
 param_list+=( ${name}_Shift_Lips )

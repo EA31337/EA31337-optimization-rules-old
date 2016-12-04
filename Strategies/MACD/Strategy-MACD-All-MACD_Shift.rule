@@ -1,6 +1,7 @@
 ## Init settings.
 # Parameter list to optimize.
 name=MACD
+param_list=()
 param_list+=( ${name}_Shift )
 param_list+=( ${name}_Shift_Far )
 
