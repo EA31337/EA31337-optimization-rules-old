@@ -1,21 +1,19 @@
 ## Init settings.
 # Parameter list to optimize.
 name=Alligator
-param1=${name}_Shift
-param2=${name}_Shift_Far
-param_list=( $param1 $param2 )
+param_list+=( ${name}_Shift_Jaw )
+param_list+=( ${name}_Shift_Teeth )
+param_list+=( ${name}_Shift_Lips )
+param_list+=( ${name}_Shift )
+param_list+=( ${name}_Shift_Far )
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.
-value=$(input_get $param1)
-start=$(($value - 2))
-end=$(($value + 2))
-ea_set_optimize_param ^${param1} $start $end
-value=$(input_get $param2)
-start=$(($value - 2))
-end=$(($value + 2))
-ea_set_optimize_param ^${param2} $start $end
+for param in ${param_list[@]}; do
+  value=$(input_get $param)
+  ea_set_optimize_param ${param} $(($value - 1)) $(($value + 1))
+done
 
 # vim: set syntax=sh:
