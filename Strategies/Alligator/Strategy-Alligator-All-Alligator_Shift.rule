@@ -6,6 +6,7 @@ param_list+=( ${name}_Shift_Teeth )
 param_list+=( ${name}_Shift_Lips )
 param_list+=( ${name}_Shift )
 param_list+=( ${name}_Shift_Far )
+
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}

@@ -3,14 +3,13 @@
 name=Envelopes
 param=${name}_MA_Shift
 param_list=( $param )
+
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 value=$(input_get ${param})
-start=$(( $value > 0 ? $(( $value - 1 )) : 0 ))
-end=$(( $value + 1 ))
-ea_set_optimize_param ${param} $start $end
+ea_set_optimize_param ${param} $(( $value - 2 )) $(( $value + 2 ))
 
 # vim: set syntax=sh:

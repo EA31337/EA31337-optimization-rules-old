@@ -3,14 +3,13 @@
 name=WPR
 param=${name}_Shift
 param_list=( ${param} )
+
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 value=$(input_get ${param})
-start=$(( $value - 2 > 0 ? $value - 2 : 0 ))
-end=$(( $value + 2 ))
-ea_set_optimize_param ${param} $start $end
+ea_set_optimize_param ${param} $(( $value - 2 )) $(( $value + 2 ))
 
 # vim: set syntax=sh:

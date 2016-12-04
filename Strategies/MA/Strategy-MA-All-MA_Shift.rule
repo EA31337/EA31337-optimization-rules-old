@@ -6,6 +6,7 @@ param_list+=( ${name}_Shift_Far )
 param_list+=( ${name}_Shift_Fast )
 param_list+=( ${name}_Shift_Medium )
 param_list+=( ${name}_Shift_Slow )
+
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
