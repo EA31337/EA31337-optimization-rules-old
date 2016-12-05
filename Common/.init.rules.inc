@@ -99,6 +99,8 @@ ea_strategy_default_sets() {
   ea_actions_enabled 0
   # Disable boosting.
   ea_boost_enabled 0
+  # Reset signal methods.
+  input_set ^${strategy}.*_SignalMethod 0
   # Set lot size.
   ea_set_lotsize 0.01
 }
