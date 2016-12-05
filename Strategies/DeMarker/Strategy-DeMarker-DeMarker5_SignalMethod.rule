@@ -1,7 +1,7 @@
 ## Init settings.
 # Parameter list to optimize.
-name=MACD
-period=15
+name=DeMarker
+period=5
 strategy=${name}${period}
 param=${strategy}_SignalMethod
 param_list=( ${param} )
