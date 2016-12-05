@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-strategy=MA
+name=MA
 param_list=()
 param_list+=( ${name}_Period_Fast )
 param_list+=( ${name}_Period_Medium )
