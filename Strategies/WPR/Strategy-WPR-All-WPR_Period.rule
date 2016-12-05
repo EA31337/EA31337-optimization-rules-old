@@ -1,33 +1,15 @@
 ## Init settings.
-# Backtest settings.
-ini_set_ea maxdrawdown_enable 0
 # Parameter list to optimize.
 name=WPR
 param=${name}_Period
 param_list=( ${param} )
+
 ## EA settings.
-input_set ^CloseOrderAfterXHours 72
-# Disable all optimization settings.
-ea_optimize_all_set 0
-# Disable all active strategies.
-ea_strategies_enabled 0
-# Disable account conditions.
-ea_actions_enabled 0
-# Disable boosting.
-ea_boost_enabled 0
-# Set lot size.
-ea_set_lotsize 0.01
-# Reset open methods.
-input_set ^${name}.*_SignalMethod 0
-# Enable strategy.
-input_set ^${name}.*_Active 1
+ea_strategy_default_sets ${name}.*
+ea_set_neutral_trail ${name}
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-# Test ${param}.
-input_set ^${param},F 1
-input_set ^${param},1 $(( $(input_get ${param}) > 4 ? $(input_get ${param}) - 4 : 4 ))
-input_set ^${param},2 1
-input_set ^${param},3 $(( $(input_get ${param}) + 4 ))
+## Optimization settings.
+value=$(input_get ${param})
+ea_set_optimize_param ${param} $(($value - 5)) $(($value + 5))
 
-# $ETA: 0h$
 # vim: set syntax=sh:
