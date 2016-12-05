@@ -1,7 +1,7 @@
 ## Init settings.
 # Parameter list to optimize.
 name=MA
-param=^${name}_Applied_Price
+param=${name}_Applied_Price
 param_list=( ${param} )
 ## EA settings.
 ea_strategy_default_sets ${name}.*

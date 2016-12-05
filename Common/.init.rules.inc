@@ -15,10 +15,10 @@ ea_set_optimize_param() {
   local end=$3
   local step=${4:-1}
   # Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-  input_set $param,F 1
-  input_set $param,1 $start
-  input_set $param,2 $step
-  input_set $param,3 $end
+  input_set ^$param,F 1
+  input_set ^$param,1 $start
+  input_set ^$param,2 $step
+  input_set ^$param,3 $end
 }
 
 # Close all orders at the given hour.
