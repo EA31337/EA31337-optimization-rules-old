@@ -10,6 +10,8 @@ ea_actions_enabled 0
 ea_boost_enabled 0
 # Set lot size.
 ea_set_lotsize 0.01
+# Enable trade with trend.
+input_set ^TradeWithTrend 1
 
 ## Optimization settings.
 ea_set_optimize_param ${param} 1 255
