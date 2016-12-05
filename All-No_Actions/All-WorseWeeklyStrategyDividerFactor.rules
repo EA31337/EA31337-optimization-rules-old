@@ -11,9 +11,8 @@ ea_actions_enabled 0
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 # Test WorseWeeklyStrategyDividerFactor.
 input_set WorseWeeklyStrategyDividerFactor,F 1
-input_set WorseWeeklyStrategyDividerFactor,1 $( bc <<< "$(input_get WorseWeeklyStrategyDividerFactor) - 0.2" )
+input_set WorseWeeklyStrategyDividerFactor,1 $( bc <<< "$(input_get WorseWeeklyStrategyDividerFactor) - 1.0" )
 input_set WorseWeeklyStrategyDividerFactor,2 0.1
-input_set WorseWeeklyStrategyDividerFactor,3 $( bc <<< "$(input_get WorseWeeklyStrategyDividerFactor) + 0.2" )
+input_set WorseWeeklyStrategyDividerFactor,3 $( bc <<< "$(input_get WorseWeeklyStrategyDividerFactor) + 1.0" )
 
-# $ETA:$
 # vim: set syntax=sh:

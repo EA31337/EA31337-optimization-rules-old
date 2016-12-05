@@ -11,9 +11,8 @@ ea_actions_enabled 0
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 # Test BestMonthlyStrategyMultiplierFactor.
 input_set BestMonthlyStrategyMultiplierFactor,F 1
-input_set BestMonthlyStrategyMultiplierFactor,1 $( bc <<< "$(input_get BestMonthlyStrategyMultiplierFactor) - 0.2" )
+input_set BestMonthlyStrategyMultiplierFactor,1 $( bc <<< "$(input_get BestMonthlyStrategyMultiplierFactor) - 1.0" )
 input_set BestMonthlyStrategyMultiplierFactor,2 0.1
-input_set BestMonthlyStrategyMultiplierFactor,3 $( bc <<< "$(input_get BestMonthlyStrategyMultiplierFactor) + 0.2" )
+input_set BestMonthlyStrategyMultiplierFactor,3 $( bc <<< "$(input_get BestMonthlyStrategyMultiplierFactor) + 1.0" )
 
-# $ETA:$
 # vim: set syntax=sh:
