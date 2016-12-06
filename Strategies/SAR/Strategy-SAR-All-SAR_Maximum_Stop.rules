@@ -21,9 +21,9 @@ input_set ^SAR.*_Active 1
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 # Test SAR_Maximum_Stop.
 input_set ^SAR_Maximum_Stop,F 1
-input_set ^SAR_Maximum_Stop,1 $( echo $(input_get SAR_Maximum_Stop) - 0.2 | bc )
+input_set ^SAR_Maximum_Stop,1 $( echo $(input_get SAR_Maximum_Stop) - 0.5 | bc )
 input_set ^SAR_Maximum_Stop,2 0.1
-input_set ^SAR_Maximum_Stop,3 $( echo $(input_get SAR_Maximum_Stop) + 0.2 | bc )
+input_set ^SAR_Maximum_Stop,3 $( echo $(input_get SAR_Maximum_Stop) + 0.5 | bc )
 
 # $ETA:$
 # vim: set syntax=sh:

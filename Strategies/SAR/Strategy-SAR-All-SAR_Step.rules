@@ -23,9 +23,8 @@ input_set ^SAR.*_Active 1
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 value=$(input_get $param)
 input_set ^$param,F 1
-input_set ^$param,1 $( bc <<< "if ($value - 0.02 > 0.02) $value - 0.02 else 0.02" )
+input_set ^$param,1 $( bc <<< "if ($value - 0.10 > 0.02) $value - 0.10 else 0.02" )
 input_set ^$param,2 0.01
-input_set ^$param,3 $( bc <<< "$value + 0.02" )
+input_set ^$param,3 $( bc <<< "$value + 0.10" )
 
-# $ETA: 0h$
 # vim: set syntax=sh:
