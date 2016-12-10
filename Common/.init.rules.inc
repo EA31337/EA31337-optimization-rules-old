@@ -101,6 +101,8 @@ ea_strategy_default_sets() {
   ea_boost_enabled 0
   # Reset signal methods.
   input_set ^${strategy}.*_SignalMethod 0
+  # Disable trading with trend.
+  input_set ^TradeWithTrend 0
   # Set lot size.
   ea_set_lotsize 0.01
 }
