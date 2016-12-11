@@ -1,0 +1,16 @@
+## Init settings.
+# Parameter list to optimize.
+param_list=()
+for item in Alligator Bands DeMarker Envelopes Fractals MA MACD RSI SAR WPR; do
+  param_list+=( ${item}15_Active )
+done
+## Backtest settings.
+# Disable all optimization settings.
+ea_optimize_all_set 0
+
+## Optimization settings.
+for param in ${param_list[@]}; do
+  ea_set_optimize_param ${param} 0 1
+done
+
+# vim: set syntax=sh:
