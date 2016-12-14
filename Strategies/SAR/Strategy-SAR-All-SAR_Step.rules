@@ -1,26 +1,14 @@
 ## Init settings.
 # Parameter list to optimize.
-strategy=SAR
-param=${strategy}_Step
+name=SAR
+param=${name}_Step
 param_list=( $param )
-## EA settings.
-input_set ^CloseOrderAfterXHours 72
-# Disable all optimization settings.
-ea_optimize_all_set 0
-# Disable all active strategies.
-ea_strategies_enabled 0
-# Disable account conditions.
-ea_actions_enabled 0
-# Disable boosting.
-ea_boost_enabled 0
-# Set lot size.
-ea_set_lotsize 0.01
-# Reset open methods.
-input_set ^SAR.*_SignalMethod 0
-# Enable strategy.
-input_set ^SAR.*_Active 1
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+## EA settings.
+ea_strategy_default_sets ${name}30
+ea_set_neutral_trail ${name}
+
+## Optimization settings.
 value=$(input_get $param)
 input_set ^$param,F 1
 input_set ^$param,1 $( bc <<< "if ($value - 0.10 > 0.02) $value - 0.10 else 0.02" )
