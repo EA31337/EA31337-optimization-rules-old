@@ -10,9 +10,6 @@ ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 value=$(input_get ${param})
-step=1
-start=$(( $value - $step >= 0 ? $(( $value - $step )) : 0 ))
-end=$(( $value + 2 ))
-ea_set_optimize_param ${param} ${start} ${end} ${step}
+ea_set_optimize_param ${param} $(( $value - 2 )) $(( $value + 2 ))
 
 # vim: set syntax=sh:
