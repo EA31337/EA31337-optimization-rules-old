@@ -1,0 +1,14 @@
+## Init settings.
+# Parameter list to optimize.
+name=SAR
+param=${name}_TrailingProfitMethod
+param_list=( $param )
+
+## EA settings.
+ea_strategy_default_sets ${name}.*
+ea_set_neutral_trail ${name}
+
+## Optimization settings.
+ea_set_optimize_param ${param} 1 27
+
+# vim: set syntax=sh:

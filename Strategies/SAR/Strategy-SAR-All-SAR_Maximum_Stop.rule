@@ -1,8 +1,8 @@
 ## Init settings.
 # Parameter list to optimize.
 name=SAR
-param=${name}_Shift
-param_list=( ${param} )
+param=${name}_Maximum_Stop
+param_list=( $param )
 
 ## EA settings.
 ea_strategy_default_sets ${name}30
@@ -10,6 +10,9 @@ ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 value=$(input_get ${param})
-ea_set_optimize_param ${param} $(( $value - 2 )) $(( $value + 2 ))
+start=$( bc <<< "$value - 0.5" )
+end=$(   bc <<< "$value + 0.5" )
+step=0.1
+ea_set_optimize_param ${param} ${start} ${end} ${step}
 
 # vim: set syntax=sh:
