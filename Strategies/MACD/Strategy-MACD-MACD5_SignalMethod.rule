@@ -11,6 +11,7 @@ ini_set ^TestPeriod M${period}
 
 ## EA settings.
 ea_strategy_default_sets ${strategy}
+ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 ea_set_optimize_param ${param} 0 31
