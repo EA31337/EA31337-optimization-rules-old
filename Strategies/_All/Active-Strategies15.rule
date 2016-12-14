@@ -1,4 +1,5 @@
 ## Init settings.
+PERIOD=M15
 # Parameter list to optimize.
 param_list=()
 for item in Alligator Bands DeMarker Envelopes Fractals MA MACD RSI SAR WPR; do
