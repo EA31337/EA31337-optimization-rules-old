@@ -1,13 +1,11 @@
 ## Init settings.
 # Parameter list to optimize.
 name=MACD
-period=1
-strategy=${name}${period}
+tf=1
+PERIOD=M${tf}
+strategy=${name}${tf}
 param=${strategy}_SignalMethod
 param_list=( ${param} )
-
-## Backtest settings.
-ini_set ^TestPeriod M${period}
 
 ## EA settings.
 ea_strategy_default_sets ${strategy}
