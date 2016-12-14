@@ -3,14 +3,13 @@
 name=Envelopes
 param=${name}_MA_Period
 param_list=( $param )
+
 ## EA settings.
-ea_strategy_default_sets ${name}.*
+ea_strategy_default_sets ${name}30
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 value=$(input_get ${param})
-start=$(( $value > 2 ? $(( $value - 2 )) : 0 ))
-end=$(( $value + 2 ))
-ea_set_optimize_param ${param} $start $end
+ea_set_optimize_param ${param} $(( $value - 5 )) $(( $value + 5 ))
 
 # vim: set syntax=sh:

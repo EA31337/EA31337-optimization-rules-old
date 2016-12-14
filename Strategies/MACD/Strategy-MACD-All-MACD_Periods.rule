@@ -7,7 +7,7 @@ param_list+=( ${name}_Period_Slow )
 param_list+=( ${name}_Period_Signal )
 
 ## EA settings.
-ea_strategy_default_sets ${name}.*
+ea_strategy_default_sets ${name}30
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.

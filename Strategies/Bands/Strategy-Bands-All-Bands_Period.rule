@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-name=RSI
+name=Bands
 param=${name}_Period
 param_list=( $param )
 
@@ -9,7 +9,7 @@ ea_strategy_default_sets ${name}30
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.
-value=$(input_get RSI_Period)
-ea_set_optimize_param ${param} $(($value - 5)) $(($value + 5))
+value=$(input_get Bands_Period)
+ea_set_optimize_param ${param} $(( $value - 5 )) $(( $value + 5 ))
 
 # vim: set syntax=sh:
