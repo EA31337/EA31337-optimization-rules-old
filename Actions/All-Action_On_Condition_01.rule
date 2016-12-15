@@ -1,19 +1,22 @@
 ## Init settings.
 # Parameter list to optimize.
-param1=Market_Condition_1
-param2=Action_On_Condition_1
-param_list=( $param1 $param2 )
+param1=Account_Condition_1
+param2=Market_Condition_1
+param3=Action_On_Condition_1
+param_list=( $param1 $param2 $param3 )
 
 # Disable all optimization settings.
 ea_optimize_all_set 0
 # Enable account conditions.
 input_set Account_Conditions_Active 1
 # Disable other actions by default.
+input_set Account_Condition_.* 0
 input_set Market_Condition_.* 0
 input_set Action_On_Condition_.* 0
 
 ## Optimization settings.
-ea_set_optimize_param ${param1} 2 14
-ea_set_optimize_param ${param2} 0 10
+ea_set_optimize_param ${param1} 4 6
+ea_set_optimize_param ${param2} 2 19
+ea_set_optimize_param ${param3} 0 10
 
 # vim: set syntax=sh:
