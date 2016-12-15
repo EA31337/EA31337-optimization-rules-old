@@ -4,7 +4,7 @@ param_list=( Breakage30_SignalMethod )
 ## Backtest settings.
 ini_set ^TestPeriod M30
 ## EA settings.
-input_set ^CloseOrderAfterXHours 72
+input_set ^CloseOrderAfterXHours 120
 # Disable all optimization settings.
 ea_optimize_all_set 0
 # Disable all active strategies.

@@ -92,7 +92,7 @@ ea_strategy_default_sets() {
   # Enables single strategy.
   input_set ^${strategy}_Active 1
   # Close orders after some time.
-  input_set ^CloseOrderAfterXHours 72
+  input_set ^CloseOrderAfterXHours 120
   # Disable all optimization settings.
   ea_optimize_all_set 0
   # Disable account conditions.
