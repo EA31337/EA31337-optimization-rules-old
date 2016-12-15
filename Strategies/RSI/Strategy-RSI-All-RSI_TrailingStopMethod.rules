@@ -21,7 +21,7 @@ input_set ^RSI.*_Active 1
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 # Test RSI_TrailingStopMethod.
 input_set ^RSI_TrailingStopMethod,F 1
-input_set ^RSI_TrailingStopMethod,1 0
+input_set ^RSI_TrailingStopMethod,1 1
 input_set ^RSI_TrailingStopMethod,2 1
 input_set ^RSI_TrailingStopMethod,3 27
 

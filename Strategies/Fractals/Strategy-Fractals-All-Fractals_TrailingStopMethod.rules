@@ -21,7 +21,7 @@ input_set ^Fractals.*_Active 1
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 # Test Fractals_TrailingStopMethod.
 input_set ^Fractals_TrailingStopMethod,F 1
-input_set ^Fractals_TrailingStopMethod,1 0
+input_set ^Fractals_TrailingStopMethod,1 1
 input_set ^Fractals_TrailingStopMethod,2 1
 input_set ^Fractals_TrailingStopMethod,3 27
 

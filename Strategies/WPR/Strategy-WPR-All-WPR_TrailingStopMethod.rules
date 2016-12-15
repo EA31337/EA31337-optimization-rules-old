@@ -21,7 +21,7 @@ input_set ^WPR.*_Active 1
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 # Test WPR_TrailingStopMethod.
 input_set ^WPR_TrailingStopMethod,F 1
-input_set ^WPR_TrailingStopMethod,1 0
+input_set ^WPR_TrailingStopMethod,1 1
 input_set ^WPR_TrailingStopMethod,2 1
 input_set ^WPR_TrailingStopMethod,3 27
 
