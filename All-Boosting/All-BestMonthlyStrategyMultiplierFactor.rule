@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-param=WorseMonthlyStrategyDividerFactor
+param=BestMonthlyStrategyMultiplierFactor
 param_list=( $param )
 # Disable all optimization settings.
 ea_optimize_all_set 0
@@ -10,6 +10,7 @@ input_set Boosting_Enabled 1
 ea_actions_enabled 0
 
 ## Optimization settings.
+value=$(input_get ${param})
 step=0.1
 start=$( bc <<< "if ($value - 1.0 > 0) $value - 1.0 else $step" )
 end=$( bc <<< "$value + 1.0" )

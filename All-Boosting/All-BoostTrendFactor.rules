@@ -10,9 +10,10 @@ input_set Boosting_Enabled 1
 ea_actions_enabled 0
 
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+value=$(input_get ${param})
 input_set BoostTrendFactor,F 1
-input_set BoostTrendFactor,1 $( bc <<< "$(input_get BoostTrendFactor) - 0.2" )
+input_set BoostTrendFactor,1 $( bc <<< "$value - 0.2" )
 input_set BoostTrendFactor,2 0.1
-input_set BoostTrendFactor,3 $( bc <<< "$(input_get BoostTrendFactor) + 0.2" )
+input_set BoostTrendFactor,3 $( bc <<< "$value + 0.2" )
 
 # vim: set syntax=sh:
