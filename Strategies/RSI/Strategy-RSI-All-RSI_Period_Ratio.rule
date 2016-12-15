@@ -9,10 +9,9 @@ ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.
-value=$(input_get ${param})
-start=$( bc <<< "$value - 1.0" )
-end=$(   bc <<< "$value + 1.0" )
 step=0.1
+start=$( bc <<< "if ($value - 1.0 > 0) $value - 1.0 else $step" )
+end=$( bc <<< "$value + 1.0" )
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 
 # vim: set syntax=sh:
