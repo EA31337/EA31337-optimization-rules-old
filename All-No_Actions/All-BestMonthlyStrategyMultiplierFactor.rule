@@ -1,0 +1,18 @@
+## Init settings.
+# Parameter list to optimize.
+param=BestMonthlyStrategyMultiplierFactor
+param_list=( $param )
+# Disable all optimization settings.
+ea_optimize_all_set 0
+# Enable boosting.
+input_set Boosting_Enabled 1
+# Disable account conditions.
+ea_actions_enabled 0
+
+## Optimization settings.
+step=0.1
+start=$( bc <<< "if ($value - 1.0 > 0) $value - 1.0 else $step" )
+end=$( bc <<< "$value + 1.0" )
+ea_set_optimize_param ${param} ${start} ${end} ${step}
+
+# vim: set syntax=sh:
