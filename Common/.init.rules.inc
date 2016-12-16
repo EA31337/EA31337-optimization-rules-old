@@ -101,8 +101,6 @@ ea_strategy_default_sets() {
   ea_boost_enabled 0
   # Reset signal methods.
   input_set ^${strategy}.*_SignalMethod 0
-  # Disable trading with trend.
-  input_set ^TradeWithTrend 0
   # Set default lot size.
   ea_set_lotsize 0.01
 }
@@ -113,8 +111,6 @@ ea_strategy_default_sets() {
 ea_set_neutral_trail() {
   local strategy=${1}
   local method=${2:-0}
-  input_set ^TrailingProfitOneWay 1
-  input_set ^TrailingStopOneWay 1
   input_set ^${strategy}_TrailingProfitMethod ${method}
   input_set ^${strategy}_TrailingStopMethod ${method}
   input_set ^MinPipGap 10
