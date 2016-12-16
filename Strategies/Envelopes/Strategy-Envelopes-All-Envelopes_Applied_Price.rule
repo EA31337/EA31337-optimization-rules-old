@@ -4,7 +4,7 @@ name=Envelopes
 param=${name}_Applied_Price
 param_list=( ${param} )
 ## EA settings.
-ea_strategy_default_sets ${name}.*
+ea_strategy_default_sets ${name}[0-9]\\+
 ea_set_neutral_trail ${name}
 
 ## Optimization settings.

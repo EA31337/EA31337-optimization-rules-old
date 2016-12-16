@@ -5,7 +5,7 @@ param=${name}_TrailingStopMethod
 param_list=( ${param} )
 
 ## EA settings.
-ea_strategy_default_sets ${name}.*
+ea_strategy_default_sets ${name}[0-9]\\+
 
 ## Optimization settings.
 ea_set_optimize_param ${param} -27 27
