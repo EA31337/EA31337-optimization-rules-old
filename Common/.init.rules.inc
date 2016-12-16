@@ -101,6 +101,9 @@ ea_strategy_default_sets() {
   ea_boost_enabled 0
   # Reset signal methods.
   input_set ^${strategy}.*_SignalMethod 0
+  # Do not disable strategies on too low or high factor.
+  input_set ^ProfitFactorMinToTrade 0
+  input_set ^ProfitFactorMaxToTrade 0
   # Set default lot size.
   ea_set_lotsize 0.01
 }
