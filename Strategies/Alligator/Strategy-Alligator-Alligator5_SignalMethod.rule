@@ -9,9 +9,8 @@ param_list=( ${param} )
 
 ## EA settings.
 ea_strategy_default_sets ${strategy}
-ea_set_neutral_trail ${name}
 
 ## Optimization settings.
-ea_set_optimize_param ${param} 0 63
+ea_set_optimize_param ${param} -63 63
 
 # vim: set syntax=sh:
