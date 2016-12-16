@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-name=MA
+name=DeMarker
 param=${name}_TrailingProfitMethod
 param_list=( ${param} )
 

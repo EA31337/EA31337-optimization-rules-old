@@ -3,6 +3,7 @@
 name=Alligator
 param=${name}_Applied_Price
 param_list=( ${param} )
+
 ## EA settings.
 ea_strategy_default_sets ${name}.*
 ea_set_neutral_trail ${name}

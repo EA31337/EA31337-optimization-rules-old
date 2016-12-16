@@ -1,11 +1,12 @@
 ## Init settings.
-# Parameter list to optimize.
-name=MA
+name=Fractals
 param=${name}_TrailingProfitMethod
+# Parameter list to optimize.
 param_list=( ${param} )
 
 ## EA settings.
 ea_strategy_default_sets ${name}.*
+ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 ea_set_optimize_param ${param} -27 27

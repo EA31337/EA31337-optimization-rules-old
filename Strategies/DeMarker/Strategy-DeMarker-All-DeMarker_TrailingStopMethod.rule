@@ -1,7 +1,7 @@
 ## Init settings.
 # Parameter list to optimize.
-name=MA
-param=${name}_TrailingProfitMethod
+name=DeMarker
+param=${name}_TrailingStopMethod
 param_list=( ${param} )
 
 ## EA settings.
@@ -11,3 +11,4 @@ ea_strategy_default_sets ${name}.*
 ea_set_optimize_param ${param} -27 27
 
 # vim: set syntax=sh:
+

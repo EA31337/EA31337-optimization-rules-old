@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-name=MA
+name=RSI
 param=${name}_TrailingProfitMethod
 param_list=( ${param} )
 
@@ -11,3 +11,4 @@ ea_strategy_default_sets ${name}.*
 ea_set_optimize_param ${param} -27 27
 
 # vim: set syntax=sh:
+

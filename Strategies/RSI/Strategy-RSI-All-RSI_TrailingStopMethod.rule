@@ -1,7 +1,7 @@
 ## Init settings.
 # Parameter list to optimize.
-name=MA
-param=${name}_TrailingProfitMethod
+name=RSI
+param=${name}_TrailingStopMethod
 param_list=( ${param} )
 
 ## EA settings.
