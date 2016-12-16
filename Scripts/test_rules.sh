@@ -3,7 +3,7 @@
 set -e
 [ "$TRACE" ] && set -x
 ROOT="$(git rev-parse --show-toplevel)"
-SETURL="https://raw.githubusercontent.com/EA31337-Tester/EA31337-Lite-Sets/master/EURUSD/default/2000USD/10-spread/5-digits/2014/EA31337-Lite.set"
+SETURL="https://raw.githubusercontent.com/EA31337-Tester/EA31337-Lite-Sets/master/EURUSD/default/10000USD/20-spread/5-digits/2014-2015/EA31337-Lite.set"
 SETFILE="$ROOT/EA31337-Lite.set.test"
 VM_DIR=$(find "$ROOT" -name _VM -type d -print -quit)
 TESTER_INI="$VM_DIR/conf/mt4-tester.ini.test"

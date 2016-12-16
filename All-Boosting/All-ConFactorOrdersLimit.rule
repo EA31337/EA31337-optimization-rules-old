@@ -1,0 +1,19 @@
+## Init settings.
+# Parameter list to optimize.
+param=ConFactorOrdersLimit
+param_list=( $param )
+# Disable all optimization settings.
+ea_optimize_all_set 0
+# Enable boosting.
+input_set Boosting_Enabled 1
+# Disable account conditions.
+ea_actions_enabled 0
+
+## Optimization settings.
+value=$(input_get ${param})
+step=100
+start=$( bc <<< "if ($value - $step * 10 > 0) $value - $step * 10 else $step" )
+end=$( bc <<< "$value + $step * 10" )
+ea_set_optimize_param ${param} ${start} ${end} ${step}
+
+# vim: set syntax=sh:
