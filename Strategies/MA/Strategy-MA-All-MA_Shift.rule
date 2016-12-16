@@ -15,7 +15,9 @@ ea_set_neutral_trail ${name}
 ## Optimization settings.
 for param in ${param_list[@]}; do
   value=$(input_get $param)
-  ea_set_optimize_param ${param} $(($value - 1)) $(($value + 1))
+  start=$(( $value - 2 > 0 ? $(( $value - 2 )) : 0 ))
+  end=$(($value + 2))
+  ea_set_optimize_param ${param} ${start} ${end}
 done
 
 # vim: set syntax=sh:
