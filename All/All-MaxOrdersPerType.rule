@@ -1,0 +1,11 @@
+## Init settings.
+# Parameter list to optimize.
+param=MaxOrdersPerType
+param_list=( $param )
+# Disable all optimization settings.
+ea_optimize_all_set 0
+
+## Optimization settings.
+ea_set_optimize_param ${param} 0 20 2
+
+# vim: set syntax=sh:
