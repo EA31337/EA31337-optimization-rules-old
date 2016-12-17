@@ -4,13 +4,8 @@ param=Account_Conditions_Active
 param_list=( ${param} )
 # Disable all optimization settings.
 ea_optimize_all_set 0
-# Disable boosting.
-ea_boost_enabled 0
-# Set lot size.
-ea_set_lotsize 0.01
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-# Test Account_Conditions_Active.
+## Optimization settings.
 ea_set_optimize_param ${param} 0 1
 
 # vim: set syntax=sh:
