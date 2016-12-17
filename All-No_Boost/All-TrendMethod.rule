@@ -12,6 +12,6 @@ ea_boost_enabled 0
 ea_set_lotsize 0.01
 
 ## Optimization settings.
-ea_set_optimize_param ${param} 1 255
+ea_set_optimize_param ${param} -255 255
 
 # vim: set syntax=sh:
