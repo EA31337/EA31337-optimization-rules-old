@@ -7,6 +7,9 @@ done
 ## Backtest settings.
 # Disable all optimization settings.
 ea_optimize_all_set 0
+# Disables min/max profit factor.
+input_set ^ProfitFactorMinToTrade 0
+input_set ^ProfitFactorMaxToTrade 0
 
 ## Optimization settings.
 for param in ${param_list[@]}; do
