@@ -6,14 +6,9 @@ param_list=( ${param} )
 
 ## EA settings.
 ea_strategy_default_sets ${name}[0-9]\\+
-ea_set_neutral_trail ${name}
 
-
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-# Test WPR_SignalLevel.
-input_set ^WPR_SignalLevel,F 1
-input_set ^WPR_SignalLevel,1 $(( $(input_get WPR_SignalLevel) - 5))
-input_set ^WPR_SignalLevel,2 1
-input_set ^WPR_SignalLevel,3 $(( $(input_get WPR_SignalLevel) + 5))
+## Optimization settings.
+value=$(input_get ${param})
+ea_set_optimize_param ${param} $(( $value - 5 )) $(( $value + 5 ))
 
 # vim: set syntax=sh:
