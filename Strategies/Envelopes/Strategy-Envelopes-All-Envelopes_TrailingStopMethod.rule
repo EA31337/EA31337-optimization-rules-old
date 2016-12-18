@@ -6,7 +6,6 @@ param_list=( ${param} )
 
 ## EA settings.
 ea_strategy_default_sets ${name}[0-9]\\+
-ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 ea_set_optimize_param ${param} -27 27

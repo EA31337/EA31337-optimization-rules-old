@@ -7,7 +7,6 @@ param3=${name}_Period_Jaw
 param_list=( ${param1} ${param2} ${param3} )
 ## EA settings.
 ea_strategy_default_sets ${name}[0-9]\\+
-ea_set_neutral_trail ${name}
 
 ## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
 for param in ${param_list[@]}; do

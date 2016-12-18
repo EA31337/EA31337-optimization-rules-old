@@ -8,7 +8,6 @@ param_list+=( ${name}_Period_Slow )
 
 ## EA settings.
 ea_strategy_default_sets ${name}[0-9]\\+
-ea_set_neutral_trail ${name}
 
 ## Optimization settings.
 for param in ${param_list[@]}; do
