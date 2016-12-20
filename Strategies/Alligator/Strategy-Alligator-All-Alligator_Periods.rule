@@ -8,12 +8,12 @@ param_list=( ${param1} ${param2} ${param3} )
 ## EA settings.
 ea_strategy_default_sets ${name}[0-9]\\+
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+## Optimization settings.
 for param in ${param_list[@]}; do
   value=$(input_get ${param})
-  start=$(( $value - 2 > 2 ? $(( $value - 2 )) : 2 ))
-  end=$(( $value + 2 ))
   step=2
+  start=$(( $value - $step > $step ? $(( $value - $step )) : $step ))
+  end=$(( $value + $step ))
   ea_set_optimize_param ${param} $start $end $step
 done
 

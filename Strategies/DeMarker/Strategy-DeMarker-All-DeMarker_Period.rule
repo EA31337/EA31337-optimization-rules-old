@@ -9,6 +9,6 @@ ea_strategy_default_sets ${name}[0-9]\\+
 
 ## Optimization settings.
 value=$(input_get Bands_Period)
-ea_set_optimize_param ${param} $(( $value - 5 )) $(( $value + 5 ))
+ea_set_optimize_param ${param} $(( $value - 4 )) $(( $value + 4 )) 2
 
 # vim: set syntax=sh:
