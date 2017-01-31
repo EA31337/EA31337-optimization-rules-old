@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 # Common functions for EA rules.
 
+## MATH ##
+
+# Get the max of two values.
+max() {
+  echo $(( $1 > ${2:-0} ? $1 : ${2:-0} ))
+}
+
 ## OPTIMIZATION ##
 
 # Enables/disable all optimization settings.

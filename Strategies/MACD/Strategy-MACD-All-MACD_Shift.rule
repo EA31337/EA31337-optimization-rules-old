@@ -11,7 +11,9 @@ ea_strategy_default_sets ${name}[0-9]\\+
 ## Optimization settings.
 for param in ${param_list[@]}; do
   value=$(input_get $param)
-  ea_set_optimize_param ${param} $(($value - 2)) $(($value + 2))
+  start=$(max $(( $value - 2 )))
+  end=$(($value + 2))
+  ea_set_optimize_param ${param} ${start} ${end}
 done
 
 # vim: set syntax=sh:

@@ -11,7 +11,7 @@ ea_strategy_default_sets ${name}[0-9]\\+
 ## Optimization settings.
 for param in ${param_list[@]}; do
   value=$(input_get $param)
-  start=$(( $value - 2 > 0 ? $(( $value - 2 )) : 0 ))
+  start=$(max $(( $value - 2 )))
   end=$(($value + 2))
   ea_set_optimize_param ${param} ${start} ${end}
 done
