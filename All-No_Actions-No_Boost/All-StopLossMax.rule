@@ -1,6 +1,6 @@
 ## Init settings.
 # Parameter list to optimize.
-param=TakeProfit
+param=StopLossMax
 param_list=( $param )
 # Disable all optimization settings.
 ea_optimize_all_set 0
@@ -11,12 +11,11 @@ ea_boost_enabled 0
 # Set lot size.
 ea_set_lotsize 0.01
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+## Optimization settings.
 value=$(input_get $param)
-input_set $param,F 1
-input_set $param,1 $(( $value > 40 ? $(( $value - 40)) : 0 ))
-input_set $param,2 20
-input_set $param,3 $(( $value + 40))
+step=20
+start=$(max $( bc <<< "$value - $step * 2" ))
+end=$( bc <<< "$value + $step * 2" )
+ea_set_optimize_param ${param} ${start} ${end} ${step}
 
-# $ETA: 0h$
 # vim: set syntax=sh:
