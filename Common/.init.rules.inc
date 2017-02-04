@@ -37,6 +37,23 @@ ea_orders_close_all_at() {
   input_set ^MarketSpecificHour hour
 }
 
+# Sets default params for optimization.
+ea_default_sets() {
+  # Disable all optimization settings.
+  ea_optimize_all_set 0
+  # Close orders after some time.
+  input_set ^CloseOrderAfterXHours 120
+  # Disable account conditions.
+  ea_actions_enabled 0
+  # Disable boosting.
+  ea_boost_enabled 0
+  # Do not set profit factor trade limits.
+  input_set ^ProfitFactorMinToTrade 0
+  input_set ^ProfitFactorMaxToTrade 0
+  # Set default lot size.
+  ea_set_lotsize 0.01
+}
+
 ## TRADE ##
 
 ea_set_lotsize() {
@@ -75,7 +92,7 @@ ea_boost_enabled() {
 
 # Enables/disables strategies.
 ea_strategies_enabled() {
-  input_set .*_Active ${1:-1}
+  input_set "${2}.*_Active" ${1:-1}
 }
 
 # Set strategy parameters.
@@ -91,28 +108,17 @@ ea_strategy_enabled() {
   input_set ^${1}_Active ${2:-1}
 }
 
-# Sets default sets to test core logic.
+# Sets default params to test core logic.
 ea_strategy_default_sets() {
   local strategy=$1
+  # Set default trade params.
+  ea_default_sets
   # Disable all active strategies.
   ea_strategies_enabled 0
   # Enables single strategy.
   input_set ^${strategy}_Active 1
-  # Close orders after some time.
-  input_set ^CloseOrderAfterXHours 120
-  # Disable all optimization settings.
-  ea_optimize_all_set 0
-  # Disable account conditions.
-  ea_actions_enabled 0
-  # Disable boosting.
-  ea_boost_enabled 0
   # Reset signal methods.
   input_set ^${strategy}.*_SignalMethod 0
-  # Do not disable strategies on too low or high factor.
-  input_set ^ProfitFactorMinToTrade 0
-  input_set ^ProfitFactorMaxToTrade 0
-  # Set default lot size.
-  ea_set_lotsize 0.01
 }
 
 ## TRAILINGS ##
@@ -124,6 +130,12 @@ ea_set_neutral_trail() {
   input_set ^${strategy}_TrailingProfitMethod ${method}
   input_set ^${strategy}_TrailingStopMethod ${method}
   input_set ^MinPipGap 10
+}
+
+## GETTERS ##
+
+ea_get_period() {
+  ini_get ^TestPeriod
 }
 
 ## MISC ##
