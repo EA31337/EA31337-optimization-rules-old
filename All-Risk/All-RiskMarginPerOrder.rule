@@ -1,15 +1,15 @@
 ## Init settings.
-# Parameter list to optimize.
-param=RiskMargin
+param=RiskMarginPerOrder
 param_list=( $param )
+
 # Disable all optimization settings.
 ea_optimize_all_set 0
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-step=0.5
+## Optimization settings.
+step=0.2
 value=$(input_get ${param})
-start=$(bc <<< "$value - $step * 4")
-end=$(bc <<< "$value + $step * 4")
+start=$(bc <<< "$value - $step * 5")
+end=$(bc <<< "$value + $step * 5")
 ea_set_optimize_param $param $start $end $step
 
 # vim: set syntax=sh:

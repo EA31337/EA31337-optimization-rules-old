@@ -1,0 +1,15 @@
+## Init settings.
+param=RiskMarginTotal
+param_list=( $param )
+
+# Disable all optimization settings.
+ea_optimize_all_set 0
+
+## Optimization settings.
+step=1
+value=$(input_get ${param})
+start=$(max $(bc <<< "$value - $step * 5"))
+end=$(bc <<< "$value + $step * 5")
+ea_set_optimize_param $param $start $end $step
+
+# vim: set syntax=sh:
