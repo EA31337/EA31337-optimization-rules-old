@@ -5,8 +5,12 @@ param1=${name}_Period_Lips
 param2=${name}_Period_Teeth
 param3=${name}_Period_Jaw
 param_list=( ${param1} ${param2} ${param3} )
+period=$(ea_get_period)
+
 ## EA settings.
-ea_strategy_default_sets ${name}[0-9]\\+
+ea_default_sets
+ea_strategies_enabled 0
+ea_strategy_enabled ${name}${period#M}
 
 ## Optimization settings.
 for param in ${param_list[@]}; do

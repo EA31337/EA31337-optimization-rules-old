@@ -2,11 +2,14 @@
 # Parameter list to optimize.
 name=Envelopes
 param_list=()
-param_list+=( ${name}_Shift )
-param_list+=( ${name}_MA_Shift )
+period=$(ea_get_period)
 
 ## EA settings.
-ea_strategy_default_sets ${name}[0-9]\\+
+ea_default_sets
+ea_strategies_enabled 0
+ea_strategy_enabled ${name}${period#M}
+param_list+=( ${name}_Shift )
+param_list+=( ${name}_MA_Shift )
 
 ## Optimization settings.
 for param in ${param_list[@]}; do

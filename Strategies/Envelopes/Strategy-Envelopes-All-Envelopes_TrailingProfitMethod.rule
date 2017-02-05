@@ -1,7 +1,6 @@
 ## Init settings.
 name=Envelopes
 param=${name}_TrailingProfitMethod
-# Parameter list to optimize.
 param_list=( ${param} )
 period=$(ea_get_period)
 

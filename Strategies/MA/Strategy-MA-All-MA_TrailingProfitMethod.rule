@@ -1,5 +1,4 @@
 ## Init settings.
-# Parameter list to optimize.
 name=MA
 param=${name}_TrailingProfitMethod
 param_list=( ${param} )

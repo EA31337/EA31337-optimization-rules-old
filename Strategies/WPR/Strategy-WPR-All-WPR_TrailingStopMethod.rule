@@ -1,5 +1,4 @@
 ## Init settings.
-# Parameter list to optimize.
 name=WPR
 param=${name}_TrailingStopMethod
 param_list=( $param )

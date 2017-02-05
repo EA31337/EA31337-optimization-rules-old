@@ -1,12 +1,14 @@
 ## Init settings.
-# Parameter list to optimize.
 name=Bands
 param_list=()
 param_list+=( ${name}_Shift )
 param_list+=( ${name}_Shift_Far )
+period=$(ea_get_period)
 
 ## EA settings.
-ea_strategy_default_sets ${name}[0-9]\\+
+ea_default_sets
+ea_strategies_enabled 0
+ea_strategy_enabled ${name}${period#M}
 
 ## Optimization settings.
 for param in ${param_list[@]}; do

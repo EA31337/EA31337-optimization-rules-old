@@ -1,5 +1,4 @@
 ## Init settings.
-# Parameter list to optimize.
 name=RSI
 param=${name}_TrailingProfitMethod
 param_list=( ${param} )
