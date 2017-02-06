@@ -8,7 +8,7 @@ ea_optimize_all_set 0
 ## Optimization settings.
 step=1
 value=$(input_get ${param})
-start=$(bc <<< "$value - $step * 5 > 0 ? $value - $step * 5 : 0")
+start=$(bc <<< "if ($value - $step * 5 > 0) $value - $step * 5 else 0")
 end=$(bc <<< "$value + $step * 5")
 ea_set_optimize_param $param $start $end $step
 

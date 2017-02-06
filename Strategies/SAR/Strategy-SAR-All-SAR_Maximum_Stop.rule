@@ -12,7 +12,7 @@ ea_strategy_enabled ${name}${period#M}
 ## Optimization settings.
 value=$(input_get ${param})
 step=0.1
-start=$( bc <<< "$value - $step * 2 > 0 ? $value - $step * 2 : 0" )
+start=$( bc <<< "if ($value - $step * 2 > 0) $value - $step * 2 else 0" )
 end=$(   bc <<< "$value + $step * 2" )
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 
