@@ -11,6 +11,6 @@ param_list=( ${param} )
 ea_strategy_default_sets ${strategy}
 
 ## Optimization settings.
-ea_set_optimize_param ${param} -63 63
+ea_set_optimize_param ${param} -31 31
 
 # vim: set syntax=sh:
