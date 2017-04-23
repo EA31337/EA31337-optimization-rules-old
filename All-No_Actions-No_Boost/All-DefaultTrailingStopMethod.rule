@@ -10,7 +10,7 @@ ea_actions_enabled 0
 # Disable boosting.
 ea_boost_enabled 0
 # Close orders after some time.
-input_set ^CloseOrderAfterXHours 120
+input_set ^CloseOrderAfterXHours 48
 # Reset all trails to default.
 ea_set_neutral_trail ".*" 0
 # Set lot size.

@@ -42,7 +42,7 @@ ea_default_sets() {
   # Disable all optimization settings.
   ea_optimize_all_set 0
   # Close orders after some time.
-  input_set ^CloseOrderAfterXHours 120
+  input_set ^CloseOrderAfterXHours 48
   # Disable account conditions.
   ea_actions_enabled 0
   # Disable boosting.
