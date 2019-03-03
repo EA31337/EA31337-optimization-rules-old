@@ -1,0 +1,27 @@
+## Init settings.
+name=WPR
+tf=15
+PERIOD=M${tf}
+strategy=${name}${tf}
+param=${strategy}_Active
+param_list=( ${param} )
+
+## Backtest settings.
+ini_set ^TestPeriod ${PERIOD}
+# Disable all optimization settings.
+ea_optimize_all_set 0
+# Disable all active strategies.
+ea_strategies_enabled 0
+# Disable account conditions.
+ea_actions_enabled 0
+# Disable boosting.
+ea_boost_enabled 0
+# Set lot size.
+ea_set_lotsize 0.01
+
+## Optimization settings.
+ea_set_optimize_param ${param} 0 1
+
+# vim: set syntax=sh:
+
+

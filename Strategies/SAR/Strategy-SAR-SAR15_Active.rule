@@ -1,8 +1,13 @@
 ## Init settings.
-# Parameter list to optimize.
-param_list=( MA15_Active )
+name=SAR
+tf=15
+PERIOD=M${tf}
+strategy=${name}${tf}
+param=${strategy}_Active
+param_list=( ${param} )
+
 ## Backtest settings.
-ini_set ^TestPeriod M15
+ini_set ^TestPeriod ${PERIOD}
 # Disable all optimization settings.
 ea_optimize_all_set 0
 # Disable all active strategies.
@@ -14,12 +19,9 @@ ea_boost_enabled 0
 # Set lot size.
 ea_set_lotsize 0.01
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
-# Test MA15_Active.
-input_set ^MA15_Active,F 1
-input_set ^MA15_Active,1 0
-input_set ^MA15_Active,2 1
-input_set ^MA15_Active,3 1
+## Optimization settings.
+ea_set_optimize_param ${param} 0 1
 
-# $ETA: 0h$
 # vim: set syntax=sh:
+
+
