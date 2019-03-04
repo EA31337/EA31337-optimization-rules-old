@@ -11,6 +11,6 @@ ea_strategies_enabled 0
 ea_strategy_enabled ${name}${period#M}
 
 ## Optimization settings.
-ea_set_optimize_param ${param} -27 27
+ea_set_optimize_param ${param} 1 -27 0
 
 # vim: set syntax=sh:
