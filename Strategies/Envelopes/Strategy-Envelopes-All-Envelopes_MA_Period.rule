@@ -12,6 +12,9 @@ ea_strategy_enabled ${name}${period#M}
 
 ## Optimization settings.
 value=$(input_get ${param})
-ea_set_optimize_param ${param} $(( $value - 4 )) $(( $value + 4 )) 2
+step=2
+start=$(max $(($value - $step * 4)) 2)
+end=$(($value + $step * 4))
+ea_set_optimize_param ${param} ${start} ${end} ${step}
 
 # vim: set syntax=sh:
