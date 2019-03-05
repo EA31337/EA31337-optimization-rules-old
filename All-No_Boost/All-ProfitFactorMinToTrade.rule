@@ -11,8 +11,11 @@ ea_boost_enabled 0
 # Set lot size.
 ea_set_lotsize 0.01
 
-## Optimization settings (F-On, 1-Min, 2-Step, 3-Max).
+## Optimization settings.
 value=$(input_get ${param})
-ea_set_optimize_param ${param} $( bc <<< "$value - 0.2" ) $( bc <<< "$value + 0.2" ) 0.1
+step=0.2
+start=$( bc <<< "if ($value - 0.4 > 0.4) $value - 0.4 else 0.4" )
+end=$( bc <<< "$value + 0.4" )
+ea_set_optimize_param ${param} ${start} ${end} ${step}
 
 # vim: set syntax=sh:

@@ -1,7 +1,7 @@
 ## Init settings.
 # Parameter list to optimize.
-param=ProfitFactorMaxToTrade
-param_list=( ${param} )
+param=TrailingStopAddPerMinute
+param_list=( $param )
 # Disable all optimization settings.
 ea_optimize_all_set 0
 # Disable account conditions.
@@ -13,9 +13,9 @@ ea_set_lotsize 0.01
 
 ## Optimization settings.
 value=$(input_get ${param})
-step=0.2
-start=$( bc <<< "if ($value - 0.4 > 0.4) $value - 0.4 else 0.4" )
-end=$( bc <<< "$value + 0.4" )
+step=0.1
+start=$( bc <<< "if ($value - 0.5 > 0.5) $value - 0.5 else 0.5" )
+end=$( bc <<< "$value + 0.5" )
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 
 # vim: set syntax=sh:
