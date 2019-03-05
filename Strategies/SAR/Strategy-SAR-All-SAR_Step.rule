@@ -1,0 +1,16 @@
+## Init settings.
+name=SAR
+param=${name}_Step
+param_list=( $param )
+
+## EA settings.
+ea_strategy_default_sets ${name}[0-9]\\+
+
+## Optimization settings.
+value=$(input_get $param)
+step=0.01
+start=$( bc <<< "if ($value - 0.10 > 0.02) $value - 0.10 else 0.02" )
+end=$( bc <<< "$value + 0.10" )
+ea_set_optimize_param ${param} ${start} ${end} ${step}
+
+# vim: set syntax=sh:
