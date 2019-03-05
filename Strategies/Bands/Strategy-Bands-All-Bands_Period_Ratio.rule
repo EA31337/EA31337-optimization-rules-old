@@ -9,7 +9,7 @@ ea_strategy_default_sets ${name}[0-9]\\+
 ## Optimization settings.
 value=$(input_get ${param})
 step=0.1
-start=$( bc <<< "if ($value - $step * 4 > 0) $value - $step * 4 else $step" )
+start=$( bc <<< "if ($value - 1.0 > 0.5) $value - 1.0 else 0.5" )
 end=$( bc <<< "$value + $step * 4" )
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 
