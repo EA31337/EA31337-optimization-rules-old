@@ -1,0 +1,16 @@
+## Init settings.
+# Parameter list to optimize.
+name=CCI
+tf=5
+PERIOD=M${tf}
+strategy=${name}${tf}
+param=${strategy}_SignalMethod
+param_list=( ${param} )
+
+## EA settings.
+ea_strategy_default_sets ${strategy}
+
+## Optimization settings.
+ea_set_optimize_param ${param} -63 63
+
+# vim: set syntax=sh:
