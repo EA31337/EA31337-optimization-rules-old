@@ -16,7 +16,7 @@ value=$(input_get ${param})
 step=0.1
 count=4
 start=$( bc <<< "if ($value - $step * $count > 0) $value - $step * 2 else 0" )
-end=$( bc <<< "$value  + $step * $count" )
+end=$( bc <<< "if ($value + $step * $count < 1) $value + $step * 2 else 1" )
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 
 # vim: set syntax=sh:
