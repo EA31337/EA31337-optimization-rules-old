@@ -15,8 +15,10 @@ ea_set_lotsize 0.01
 value=$(input_get ${param})
 step=0.1
 count=4
-start=$( bc <<< "if ($value - $step * $count > 0) $value - $step * 2 else 0" )
-end=$( bc <<< "$value  + $step * $count" )
+min=0
+max=1.0
+start=$( bc <<< "if ($value - $step * $count > $min) $value - $step * 2 else $min" )
+end=$( bc <<< "if ($value + $step * $count < $max) $value + $step * 2 else $max" )
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 
 # vim: set syntax=sh:
