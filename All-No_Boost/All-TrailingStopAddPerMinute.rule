@@ -15,7 +15,7 @@ ea_set_lotsize 0.01
 value=$(input_get ${param})
 step=0.1
 count=2
-start=$( bc <<< "if ($value - $step * $count > 0) $value - $step * 2 else 0" )
+start=$( bc <<< "if ($value - $step * $count > 0) $value - $step * $count else 0" )
 end=$( bc <<< "$value  + $step * $count" )
 ea_set_optimize_param ${param} ${start} ${end} ${step}
 
