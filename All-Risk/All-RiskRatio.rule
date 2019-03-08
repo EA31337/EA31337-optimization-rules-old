@@ -6,6 +6,6 @@ param_list=( $param )
 ea_optimize_all_set 0
 
 ## Optimization settings.
-ea_set_optimize_param ${param} 0 0.2 2.0
+ea_set_optimize_param ${param} 0 2.0 0.5
 
 # vim: set syntax=sh:

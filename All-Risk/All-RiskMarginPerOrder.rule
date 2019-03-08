@@ -8,8 +8,8 @@ ea_optimize_all_set 0
 ## Optimization settings.
 step=0.2
 value=$(input_get ${param})
-start=$(bc <<< "$value - $step * 5")
-end=$(bc <<< "$value + $step * 5")
+start=$(bc <<< "$value - $step * 4")
+end=$(bc <<< "$value + $step * 4")
 ea_set_optimize_param $param $start $end $step
 
 # vim: set syntax=sh:

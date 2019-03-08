@@ -6,10 +6,11 @@ param_list=( $param )
 ea_optimize_all_set 0
 
 ## Optimization settings.
-step=1
 value=$(input_get ${param})
-start=$(bc <<< "if ($value - $step * 5 > 0) $value - $step * 5 else 0")
-end=$(bc <<< "$value + $step * 5")
+step=1
+count=5
+start=$(bc <<< "if ($value - $step * $count > 0) $value - $step * $count else 0")
+end=$(bc <<< "$value + $step * $count")
 ea_set_optimize_param $param $start $end $step
 
 # vim: set syntax=sh:
