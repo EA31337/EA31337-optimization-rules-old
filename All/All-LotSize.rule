@@ -1,0 +1,15 @@
+## Init settings.
+# Parameter list to optimize.
+param=LotSize
+param_list=( ${param} )
+# Disable all optimization settings.
+ea_optimize_all_set 0
+
+## Optimization settings.
+value=$(input_get ${param})
+start=0
+end=0.01
+step=0.01
+ea_set_optimize_param $param $start $end $step
+
+# vim: set syntax=sh:
