@@ -4,6 +4,11 @@
 ## MATH ##
 
 # Get the max of two values.
+min() {
+  echo $(( $1 < ${2:-0} ? $1 : ${2:-0} ))
+}
+
+# Get the max of two values.
 max() {
   echo $(( $1 > ${2:-0} ? $1 : ${2:-0} ))
 }
